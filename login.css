@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(/image/earth.png);
+}
+.box {
+  position: relative;
+  width: 210px;
+  height: 200px;
+  background-color: #1c1c1c;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 210px;
+  height: 200px;
+  transform-origin: bottom right;
+  background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+  animation: animate 6s linear infinite;
+}
+.box::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 210px;
+  height: 200px;
+  transform-origin: bottom right;
+  background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.form {
+  font-size: small;
+  position: absolute;
+  inset: 2px;
+  z-index: 10;
+  border-radius: 4px;
+  background-color: #28292d;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.form h2 {
+  color: #45f3ff;
+  font-weight: 600;
+  text-align: center;
+  margin-top: -10px;
+}
+.inputBox {
+  position: relative;
+  width: 100%;
+  margin-top: 20px;
+}
+.inputBox span {
+  position: absolute;
+  left: 0;
+  font-size: 11px;
+  color: #8f8f8f;
+  pointer-events: none;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+}
+.links {
+  display: flex;
+  justify-content: space-between;
+}
+.links a {
+  line-height: 5ch;
+  margin: 12px 0;
+  color: #8f8f8f;
+  font-size: 11px;
+  text-decoration: none;
+}
+.links a:hover {
+  color: #45f3ff;
+}
+input[type="submit"] {
+  border: none;
+  outline: none;
+  background-color: #45f3ff;
+  width: 50px;
+  padding: 4px;
+  margin-top: -5px;
+  border-radius: 2px;
+  font-weight: 600;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+    opacity: 0.8;
+}
